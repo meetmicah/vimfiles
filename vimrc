@@ -2,12 +2,13 @@
 let mapleader = ","
 
 " Sets
-:set number
-:syntax enable
+set number
+syntax enable
+set clipboard=unnamed
 
 " Enable Viewing Whitespace
-:set list
-:set listchars=tab:·\ ,extends:>,precedes:<,trail:·
+set list
+set listchars=tab:·\ ,extends:>,precedes:<,trail:·
 
 " Rulers ftw!
 autocmd BufNewFile,BufRead *.rb setlocal colorcolumn=80
@@ -27,6 +28,16 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|exe|dll|bak|orig|swp|jpg|png|gif)$|(^|[/
 nnoremap <silent> <Leader>y :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>T :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>r :CtrlPMRU<CR>
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtSelectMove("j")': ['<c-n>', '<c-j>', '<down>'],
+  \ 'PrtSelectMove("k")': ['<c-p>', '<c-k>', '<up>'],
+  \ 'PrtHistory(-1)': ['<c-h>'],
+  \ 'PrtHistory(1)': ['<c-l>'],
+  \ 'PrtCurLeft()': ['<left>', '<c-^>'],
+  \ 'PrtCurRight()': ['<right>'],
+  \ }
 
 " ZoomWin
 nnoremap <silent> <Leader>z :ZoomWin<CR>
