@@ -21,6 +21,19 @@ execute pathogen#infect()
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 map <Leader>o :BookmarkToRoot pj<CR>
 
+" Ctrlp
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|exe|dll|bak|orig|swp|jpg|png|gif)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|vendor/|tmp/cache|_site|node_modules|^tmp'
+nnoremap <silent> <Leader>y :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>T :CtrlPBufTag<CR>
+nnoremap <silent> <Leader>r :CtrlPMRU<CR>
+
+" ZoomWin
+nnoremap <silent> <Leader>z :ZoomWin<CR>
+
+" Auto Complete [:
+let g:neocomplcache_enable_at_startup = 1
+
 " Disable arrow keys
 map <Left> <Nop>
 map <Right> <Nop>
