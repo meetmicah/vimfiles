@@ -1,4 +1,5 @@
 " Lets
+set number
 let mapleader = ","
 
 " Sets
