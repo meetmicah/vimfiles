@@ -5,7 +5,8 @@ let mapleader = ","
 " Sets
 set number
 syntax enable
-set clipboard=unnamed
+set autoindent
+set hlsearch
 
 " Enable Viewing Whitespace
 set list
