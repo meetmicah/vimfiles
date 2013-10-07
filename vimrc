@@ -18,6 +18,9 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal colorcolumn=72
 " Pathogen - package manager
 execute pathogen#infect()
 
+" wrap the cursor to prev/next line
+set whichwrap=<,>,h,l,[,]
+
 " NerdTree File Manager
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 map <Leader>o :BookmarkToRoot pj<CR>
