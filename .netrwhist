@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/blaineschmeisser/Sites/devup/apps'
-let g:netrw_dirhist_2='/Users/blaineschmeisser/Sites/devup/apps/myvitals'
-let g:netrw_dirhist_3='/Users/blaineschmeisser/Sites/devup/apps/myvitals/spec'
-let g:netrw_dirhist_4='/Users/blaineschmeisser/Sites/devup/apps/myvitals/spec/models'
-let g:netrw_dirhist_5='/Users/blaineschmeisser/Sites/devup/apps/myvitals'
-let g:netrw_dirhist_6='/Users/blaineschmeisser/Sites/devup/apps/myvitals/app'
-let g:netrw_dirhist_7='/Users/blaineschmeisser/Sites/devup/apps/myvitals/app/models'
-let g:netrw_dirhist_8='/Users/blaineschmeisser/Sites/devup/apps/vitals'
-let g:netrw_dirhist_9='/Users/blaineschmeisser/Sites/devup/apps/myvitals'
+let g:netrw_dirhist_cnt =0

@@ -8,6 +8,9 @@ syntax enable
 set autoindent
 set hlsearch
 
+" Press F4 to toggle highlighting on/off, and show current value.
+noremap <F4> :set hlsearch! hlsearch?<CR>
+
 " Enable Viewing Whitespace
 set list
 set listchars=tab:·\ ,extends:>,precedes:<,trail:·
