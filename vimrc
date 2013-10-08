@@ -47,6 +47,12 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtCurRight()': ['<right>'],
   \ }
 
+" git
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gc :Gcommit -v<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+
 " ZoomWin
 nnoremap <silent> <Leader>z :ZoomWin<CR>
 
