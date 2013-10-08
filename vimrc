@@ -29,6 +29,7 @@ set whichwrap=<,>,h,l,[,]
 " NerdTree File Manager
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 map <Leader>o :BookmarkToRoot pj<CR>
+map <Leader>* :NERDTreeFind<CR>
 
 " Ctrlp
 let g:ctrlp_map = '<Leader>t'
