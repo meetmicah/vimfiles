@@ -37,6 +37,9 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|exe|dll|bak|orig|swp|jpg|png|gif)$|(^|[/
 nnoremap <silent> <Leader>y :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>T :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>r :CtrlPMRU<CR>
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_prompt_mappings = {
