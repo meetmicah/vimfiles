@@ -1,12 +1,11 @@
 " Lets
-set number
 let mapleader = ","
-
-" Sets
-set number
 syntax enable
+set number
+set number
 set autoindent
 set hlsearch
+set clipboard=unnamed
 
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
