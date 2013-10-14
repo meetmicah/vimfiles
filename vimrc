@@ -2,7 +2,6 @@
 let mapleader = ","
 syntax enable
 set number
-set number
 set autoindent
 set hlsearch
 set clipboard=unnamed
