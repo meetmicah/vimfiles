@@ -6,6 +6,7 @@ set autoindent
 set hlsearch
 set clipboard=unnamed
 filetype plugin indent on
+set backspace=indent,eol,start
 
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
