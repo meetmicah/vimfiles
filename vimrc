@@ -26,6 +26,11 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal colorcolumn=72
 " Pathogen - package manager
 execute pathogen#infect()
 
+" Scroll Off
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+
 " wrap the cursor to prev/next line
 set whichwrap=<,>,h,l,[,]
 
