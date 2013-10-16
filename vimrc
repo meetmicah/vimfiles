@@ -1,12 +1,15 @@
 " Lets
-set number
 let mapleader = ","
-
-" Sets
-set number
 syntax enable
+set number
 set autoindent
 set hlsearch
+set clipboard=unnamed
+filetype plugin indent on
+set backspace=indent,eol,start
+
+" Don't add trailing EOL in PHP files
+autocmd FileType php setlocal noeol binary fileformat=dos
 
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
@@ -29,6 +32,7 @@ set whichwrap=<,>,h,l,[,]
 " NerdTree File Manager
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 map <Leader>o :BookmarkToRoot pj<CR>
+map <Leader>* :NERDTreeFind<CR>
 
 " Ctrlp
 let g:ctrlp_map = '<Leader>t'
@@ -36,6 +40,9 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|exe|dll|bak|orig|swp|jpg|png|gif)$|(^|[/
 nnoremap <silent> <Leader>y :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>T :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>r :CtrlPMRU<CR>
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_prompt_mappings = {
@@ -73,3 +80,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Theme
 colorscheme molokai
+
+" git
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gc :Gcommit -v<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
