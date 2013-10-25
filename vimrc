@@ -16,7 +16,7 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 
 " Enable Viewing Whitespace
 set list
-set listchars=tab:·\ ,extends:>,precedes:<,trail:·
+set listchars=tab:>-,trail:~,extends:>,precedes:<
 
 " Rulers ftw!
 autocmd BufNewFile,BufRead *.rb setlocal colorcolumn=80
