@@ -31,3 +31,12 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
+[submodule "bundle/pdv"]
+	path = bundle/pdv
+	url = git@github.com:tobyS/pdv.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "bundle/vustache"]
+	path = bundle/vustache
+	url = git@github.com:tobyS/vmustache.git

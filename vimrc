@@ -86,3 +86,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Theme
 colorscheme molokai
 
+" PHP Documentor
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+autocmd BufNewFile,BufRead *.php iabbrev /** <Down><Esc>:call pdv#DocumentWithSnip()<Cr>
