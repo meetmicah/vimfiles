@@ -89,3 +89,6 @@ colorscheme molokai
 " PHP Documentor
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 autocmd BufNewFile,BufRead *.php iabbrev /** <Down><Esc>:call pdv#DocumentWithSnip()<Cr>
+
+" Reload VIMRC
+nnoremap <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
