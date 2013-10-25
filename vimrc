@@ -86,8 +86,3 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Theme
 colorscheme molokai
 
-" git
-nnoremap <silent> <Leader>gs :Gstatus<CR>
-nnoremap <silent> <Leader>gc :Gcommit -v<CR>
-nnoremap <silent> <Leader>gd :Gdiff<CR>
-nnoremap <silent> <Leader>gb :Gblame<CR>
