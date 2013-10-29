@@ -26,6 +26,9 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal colorcolumn=72
 " Pathogen - package manager
 execute pathogen#infect()
 
+" Ack Helper
+command -nargs=1 F Ack -C 2 <args>
+
 " Scroll Off
 set scrolloff=3
 set sidescrolloff=7
