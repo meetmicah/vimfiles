@@ -96,6 +96,7 @@ autocmd BufNewFile,BufRead *.php iabbrev /** <Down><Esc>:call pdv#DocumentWithSn
 " Wrap words in quotes
 map <Leader>' ciw''<Esc>P
 map <Leader>" ciw""<Esc>P
+map <Leader>) ciw()<Esc>P
 
 " Reload VIMRC
 nnoremap <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
