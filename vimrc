@@ -33,6 +33,7 @@ command -nargs=1 F Ack -C 2 <args>
 set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
+set scrolljump=10
 
 " wrap the cursor to prev/next line
 set whichwrap=<,>,h,l,[,]
