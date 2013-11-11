@@ -80,6 +80,7 @@ map <Down> <Nop>
 
 " Auto detect indention
 autocmd BufReadPost * :DetectIndent
+let g:detectindent_preferred_indent = 4
 
 " Trim trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
