@@ -7,35 +7,11 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="candy"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
 DISABLE_AUTO_UPDATE="true" # upgrade_oh_my_zsh
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -65,7 +41,6 @@ alias .dv=" cd ~/sites/devup/"
 alias .vt=" cd ~/sites/devup/apps/legacy/vitals/"
 alias .hb=" cd ~/sites/devup/apps/vitals/"
 alias .my=" cd ~/sites/devup/apps/myvitals"
-alias .my.sh="vagrant ssh -c \"cd /vagrant/apps/vitals/app/ && echo '/* to edit this file, see: https://github.com/mdx-dev/myvitals/wiki/Search-Header */' | cat - webroot/css/compiled/search_header__REV1.css | sed 's/img/assets/g' > /vagrant/myvitals/app/assets/stylesheets/search_header.css && echo '/* to edit this file, see: https://github.com/mdx-dev/myvitals/wiki/Search-Header */' | cat - webroot/js/compiled/search_header__REV1.js > /vagrant/myvitals/app/assets/javascripts/search_header.js\""
 
 # Clear the cache
 function .hb.cc() {
@@ -84,19 +59,6 @@ function .hb.cc() {
 		cd app/webroot/js/compiled/ && rm -f *.js
 		.hb
 	fi
-	cd -
-}
-
-# Remote pulling
-alias .hb.pull="ssh mdxdev 'cd /var/www/apps/hb.mdxdev.net/current && git pull'"
-alias .vt.pull="ssh mdxdev 'cd /var/www/domains/vitals.mdxdev.net/current && git pull'"
-alias .ht.pull="ssh mdxdev 'cd /var/www/apps/hb.mdxdev.net/current && git pull && cd /var/www/domains/vitals.mdxdev.net/current && git pull'"
-
-# Testing
-alias .hb.test=".hb; vagrant ssh -c 'cd /vagrant/apps/vitals/app && ../libraries/lithium/console/li3 test tests'; cd -"
-function .hb.plugin.test() {
-	.hb
-	vagrant ssh -c "cd /vagrant/apps/vitals/app && ../libraries/lithium/console/li3 test libraries/$1/tests";
 	cd -
 }
 
@@ -127,21 +89,6 @@ function gad() {
 	git commit --amend --date=$DATE
 }
 
-# Provider pulling
-alias .mongo.mdxdev="mongo 10.10.5.80"
-function .mongo.lookup() {
-	if echo $1 | grep '^[0-9]\+$'
-	then
-		vagrant ssh -c "mongo vitals --eval 'printjson(db.providers.find({_id:$1})[0])'"
-	else
-		vagrant ssh -c "mongo vitals --eval 'printjson(db.providers.find({master_name:$1})[0])'"
-	fi
-}
-function .mongo.fetch() {
-	vagrant ssh -c 'cofeee /vagrant/apps/soonerio_scripts/molo.coffee $@'
-	.mongo.lookup "$@"
-}
-
 # Mongo
 alias .mongo.start='mongod --fork'
 alias .mongo.stop='mongo admin --eval "db.shutdownServer()"'
@@ -157,13 +104,12 @@ alias .mysql.stop='mysql.server stop'
 # Redis
 alias .redis.start='redis-server /usr/local/etc/redis.conf'
 
-
+# Frak it
 function .regex() {
 	cd ~/frak-cli
 	lein run "$@"
 	cd -
 }
-
 alias .alias.regex="java -jar ~/frak-cli/compiled/frak-cli-0.1.0-standalone.jar"
 
 # Common Typos
