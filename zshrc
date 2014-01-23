@@ -88,6 +88,13 @@ function gad() {
 	DATE=$(php -r "echo date('D M d H:i:s Y O');")
 	git commit --amend --date=$DATE
 }
+# Clean current branch with origin
+function gclean() {
+	BRANCH=$(git rev-parse --abbrev-ref HEAD)
+	git clean -f
+	git fetch origin
+	git reset --hard origin/$BRANCH
+}
 
 # Mongo
 alias .mongo.start='mongod --fork'
