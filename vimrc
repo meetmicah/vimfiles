@@ -14,6 +14,9 @@ autocmd FileType php setlocal noeol binary fileformat=dos
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
 
+" Repeat search that accepts count `3Q`
+nnoremap Q :normal n.<CR>
+
 " Enable Viewing Whitespace
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
