@@ -68,7 +68,7 @@ alias .composer.get="curl http://getcomposer.org/installer | php"
 # Git aliases
 alias gs='git status'
 alias gco='git checkout'
-alias ga='git add -A :/'
+alias ga='git add -A'
 alias gd='git diff'
 alias gap='git add . -N && git add --patch'
 alias gc="git commit -v"

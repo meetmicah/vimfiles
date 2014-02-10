@@ -12,7 +12,7 @@
 	# Personal
 	s = status
 	co = checkout
-	a = add -A :/
+	a = add -A
 	d = diff
 	c = commit -v
 	l = log --stat
