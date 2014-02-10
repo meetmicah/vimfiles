@@ -72,28 +72,22 @@ alias ga='git add -A :/'
 alias gd='git diff'
 alias gap='git add . -N && git add --patch'
 alias gc="git commit -v"
-alias gam='git commit --amend -v'
 alias gl='git log --stat'
 alias gpr='git pull --rebase'
 alias grh='git reset HEAD'
 alias grhh='git reset --hard'
 alias gfo='git fetch origin'
 alias gcp='git cherry-pick'
-alias gtl="git tag -n | ruby -e \"puts STDIN.read.lines.sort_by { |t| t.split.first.sub(/^v/, '').sub(/\-rc/, '.1').split('.').map(&:to_i).tap { |v| v << 99 if v.length < 5 } }\""
 alias gp="git pull --rebase && git push origin"
 alias gpo="git push origin"
 alias gpfo="git push -f origin"
-# Change previous commit date
-function gad() {
-	DATE=$(php -r "echo date('D M d H:i:s Y O');")
-	git commit --amend --date=$DATE
-}
+alias gtl="git tag -n | ruby -e \"puts STDIN.read.lines.sort_by { |t| t.split.first.sub(/^v/, '').sub(/\-rc/, '.1').split('.').map(&:to_i).tap { |v| v << 99 if v.length < 5 } }\""
+alias gam="git commit --amend -v --date=\`date +%Y-%m-%dT%H:%M:%S\`"
 # Clean current branch with origin
 function gclean() {
-	BRANCH=$(git rev-parse --abbrev-ref HEAD)
-	git clean -f
+	git clean -fd
 	git fetch origin
-	git reset --hard origin/$BRANCH
+	git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
 }
 
 # Mongo
