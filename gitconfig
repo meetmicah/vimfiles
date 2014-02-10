@@ -1,0 +1,35 @@
+[user]
+	name = Blaine Schmeisser
+	email = BlaineSch@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim
+	excludesfile = /Users/blaineschmeisser/.gitignore
+[push]
+	default = current
+[alias]
+	# Personal
+	s = status
+	co = checkout
+	a = add -A :/
+	d = diff
+	c = commit -v
+	l = log --stat
+	pr = pull --rebase
+	rh = reset HEAD
+	rhh = reset --hard
+	fo = fetch origin
+	cp = cherry-pick
+	po = push origin
+	pfo = push -f origin
+	amend = !sh -c 'git commit --amend -v --date=$(date +%Y-%m-%dT%H:%M:%S)' -
+	p = !sh -c 'git pull --rebase && git push origin' -
+	ap = !sh -c 'git add . -N && git add --patch' -
+	cl = !sh -c 'git clean -fd && git fetch origin && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)' -
+	# Tim
+	tl = !sh -c 'git tag -n | ruby -e \"puts STDIN.read.lines.sort_by { |t| t.split.first.sub(/^v/, nil.to_s).sub(/\\-rc/, (0.1).to_s).split(/\\./).map(&:to_i).tap { |v| v << 99 if v.length < 5 } }\"' -
+	# http://technosorcery.net/blog/2010/02/07/fun-with-the-upcoming-1-7-release-of-git-rebase---interactive---autosquash/
+	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+	ri = rebase --interactive --autosquash
