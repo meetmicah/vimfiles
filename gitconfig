@@ -5,7 +5,7 @@
 	ui = true
 [core]
 	editor = vim
-	excludesfile = /Users/blaineschmeisser/.gitignore
+	excludesfile = $HOME/.gitignore
 [push]
 	default = current
 [alias]
