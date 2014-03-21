@@ -97,3 +97,7 @@ autocmd FileType php nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 " Reload VIMRC
 nnoremap <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
