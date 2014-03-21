@@ -89,7 +89,8 @@ let g:detectindent_preferred_indent = 4
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Theme
-colorscheme molokai
+colorscheme solarized
+set background=dark
 
 " PHP Documentor
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
