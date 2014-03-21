@@ -19,14 +19,10 @@ DISABLE_AUTO_UPDATE="true" # upgrade_oh_my_zsh
 plugins=(bundler)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.rvm/scripts/rvm
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-PATH=$PATH:$HOME/.rvm/bin:~/bin # Add RVM to PATH for scripting
-PATH=$PATH:/usr/local/share/npm/bin
-PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/usr/bin
-PATH=$PATH:/bin
+export PATH=/usr/local/bin:$PATH
 
 # Options
 setopt interactivecomments
@@ -115,3 +111,5 @@ alias .alias.regex="java -jar ~/frak-cli/compiled/frak-cli-0.1.0-standalone.jar"
 
 # Common Typos
 alias zues="zeus"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
