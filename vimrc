@@ -26,17 +26,37 @@ autocmd BufNewFile,BufRead *.rb setlocal colorcolumn=80
 autocmd BufNewFile,BufRead *.php setlocal colorcolumn=100
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal colorcolumn=72
 
-" Pathogen - package manager
-execute pathogen#infect()
-
 " Scroll Off
 set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
 set scrolljump=10
 
+" Switch panes with Ctrl
+map <Leader>w <C-w>
+
+" Disable arrow keys
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
 " wrap the cursor to prev/next line
 set whichwrap=<,>,h,l,[,]
+
+" Reload VIMRC
+nnoremap <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" Mouse
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
+" Trim trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Pathogen - package manager
+execute pathogen#infect()
 
 " NerdTree File Manager
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
@@ -75,30 +95,13 @@ nnoremap <silent> <Leader>z :ZoomWin<CR>
 " Auto Complete [:
 let g:neocomplcache_enable_at_startup = 1
 
-" Disable arrow keys
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
-
 " Auto detect indention
 autocmd BufReadPost * :DetectIndent
-let g:detectindent_preferred_indent = 4
-
-" Trim trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+let g:detectindent_preferred_indent = 2
 
 " Theme
 colorscheme solarized
 set background=dark
 
-" PHP Documentor
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-autocmd FileType php nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
-
-" Reload VIMRC
-nnoremap <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-set mouse=a
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
+" Dash
+nmap <silent> <leader>d <Plug>DashSearch
