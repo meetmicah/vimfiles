@@ -100,8 +100,7 @@ autocmd BufReadPost * :DetectIndent
 let g:detectindent_preferred_indent = 2
 
 " Theme
-colorscheme solarized
-set background=dark
+colorscheme spacegray
 
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
